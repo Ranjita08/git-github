@@ -20,6 +20,10 @@
 
 _scrapy crawl [pjm] -a market_data_type=[dah] -a start_date=[2019-12-01] -a end_date=[2019-12-01]_
 
+## Testing
+> Check for the data in Statuses table.
+> Check for the data in aws s3.
+
 - To validate the data in s3, run the command from "evods-iso\automation\scripts" path:
 
 _python [validation_pjm.py] 2019-12-01 2019-12-01 dah_
@@ -68,6 +72,3 @@ git clone https://{user}@bitbucket.org/dynamo-ny/evods-iso.git
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
-## Testing
-> Check for the data in Statuses table.
-> Check for the data in aws s3.
