@@ -50,6 +50,9 @@ psql -U evoisodev -h evoiso-redshift.cscftq2dd2oa.us-west-2.redshift.amazonaws.c
 evoiso-development=> SELECT DATE_PART(year, capture_date::date) AS year, DATE_PART(month, capture_date::date) AS month, COUNT(*) FROM statuses WHERE balancing_authority = 'PJM' AND market_data_type = 'dah' GROUP BY 1, 2 ORDER BY 1, 2;
 ```
 
+## To-Do
+- Capture data for ISONE for different market data types.
+
 ## Contributing
 
 - Clone/fork it 
@@ -57,4 +60,3 @@ evoiso-development=> SELECT DATE_PART(year, capture_date::date) AS year, DATE_PA
 - Commit your changes (`git commit -am 'Add some fooBar'`)
 - Push to the branch (`git push origin feature/fooBar`)
 - Create a new Pull Request
-
