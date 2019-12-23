@@ -2,15 +2,15 @@
 Generates Locational Marginal Pricing information from data sources like PJM, NYISO, ISONE.
 
 ## PJM
-Gets data from PJM's Rest API. Below are the market types
+  Gets data from PJM's Rest API. Below are the market types
 - Real-Time Hourly LMPs (rth)
 - Real-Time Five Minute LMPs (rt5m)
 - Day-Ahead Hourly LMPs (dah)
 - Settlements Verified Hourly LMPs (svh)
 - Settlements Verified Five Minute LMPs (sv5m)
 
-## NYISO (New York Independent System Operator)
-Gets data from archived NYISO website.
+## NYISO 
+  Gets data from archived NYISO website.
 - Day-Ahead Market (DAM) LBMP Generator (dahg)
 - Real-Time Market LBMP  Generator (rt5mg)
 - Time-Weighted/Integrated Real-Time LBMP Generator (rttwhg)
@@ -49,8 +49,10 @@ Validate the data in Statuses table.
 ```sh
 psql -U evoisodev -h evoiso-redshift.cscftq2dd2oa.us-west-2.redshift.amazonaws.com 
  -p 5439 -d evoiso-development
-evoiso-development=> SELECT DATE_PART(year, capture_date::date) AS year, DATE_PART(month, capture_date::date) AS month, 
-COUNT(*) FROM statuses WHERE balancing_authority = 'PJM' AND market_data_type = 'dah' GROUP BY 1, 2 ORDER BY 1, 2;
+evoiso-development=> SELECT DATE_PART(year, capture_date::date) AS year, 
+DATE_PART(month, capture_date::date) AS month, 
+COUNT(*) FROM statuses WHERE balancing_authority = 'PJM' AND market_data_type = 'dah' 
+GROUP BY 1, 2 ORDER BY 1, 2;
 ```
 
 ## To-Do
