@@ -1,7 +1,7 @@
 # EVO-ISO
 Generates Locational Marginal Pricing information from data sources like PJM, NYISO, ISONE.
 
-### PJM
+## PJM
 Gets data from PJM's Rest API. Below are the market types
 - Real-Time Hourly LMPs (rth)
 - Real-Time Five Minute LMPs (rt5m)
@@ -9,7 +9,7 @@ Gets data from PJM's Rest API. Below are the market types
 - Settlements Verified Hourly LMPs (svh)
 - Settlements Verified Five Minute LMPs (sv5m)
 
-### NYISO (New York Independent System Operator)
+## NYISO (New York Independent System Operator)
 Gets data from archived NYISO website.
 - Day-Ahead Market (DAM) LBMP Generator (dahg)
 - Real-Time Market LBMP  Generator (rt5mg)
