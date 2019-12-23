@@ -42,13 +42,13 @@ python [validation_pjm.py | validation_nyiso.py] (start-date) (end-date) (market
 
 ```sh
 aws s3 ls --recursive s3://evoiso/iso/pjm/dah/ | awk '{print $4}' | cut -f4 -d/ \
-| uniq | cut -c 1-6 | sort | uniq -c
+ | uniq | cut -c 1-6 | sort | uniq -c
 ```
 
 Validate the data in Statuses table.
 ```sh
-psql -U evoisodev -h evoiso-redshift.cscftq2dd2oa.us-west-2.redshift.amazonaws.com \
--p 5439 -d evoiso-development
+psql -U evoisodev -h evoiso-redshift.cscftq2dd2oa.us-west-2.redshift.amazonaws.com 
+ -p 5439 -d evoiso-development
 evoiso-development=> SELECT DATE_PART(year, capture_date::date) AS year, DATE_PART(month, capture_date::date) AS month, 
 COUNT(*) FROM statuses WHERE balancing_authority = 'PJM' AND market_data_type = 'dah' GROUP BY 1, 2 ORDER BY 1, 2;
 ```
